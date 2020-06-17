@@ -7,23 +7,23 @@
 int main()
 {
 	
-	int i, j, res;
-	
+	int i, j;
+	_Bool is_prime;	
 
 	for(i = 5; i < RANGE; i += 2 )
 	{
-		res = 0;
+		is_prime = 1;
 
 		for(j = 3; j < (i / 2); ++j)
 		{	
 			if(i % j == 0)
 			{
-				++res;
+				is_prime = 0;
 				break;
 			}
 		}
 		
-		if(res == 0)
+		if(is_prime == 1)
 		{
 			printf("%d\n", i);
 		}
