@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdbool.h>
+
 
 int countCharacters(char word[]){
     int length = 1;
@@ -24,6 +26,28 @@ void concatenateStrings(char str1[], char str2[], char result[]){
     }
 }
 
+bool isEqual(char str1[], char str2[]){
+
+    if(countCharacters(str1) != countCharacters(str2))
+        return false;
+
+    int i = 0, verification = 0;
+
+    while(i < countCharacters(str1) && verification == 0){ //Could be str2
+        
+        if(str1[i] == str2[i])
+            i++;
+        else
+            verification++;
+    }
+
+    if(verification == 0)
+        return true;
+    else
+        return false;
+    
+}
+
 int main(){
 
     char word1[10], word2[10], result[20];
@@ -36,6 +60,8 @@ int main(){
     fgets(word2, 10, stdin);
 
     concatenateStrings(word1, word2, result);
+    
+    printf("%d\n", isEqual(word1, word2)); // 0 to false, 1 to true
 
     printf("%s\n", result);
 
