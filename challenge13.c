@@ -2,7 +2,7 @@
 
 int main(){
 
-    int num = 13, *pnum = NULL;
+    int num = 12, *pnum = NULL;
 
     pnum = &num;
 
