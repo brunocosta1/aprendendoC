@@ -50,6 +50,8 @@ int main(){
     readItem(ptrExample);
     printItem(ptrExample);
 
+    free(ptrExample->itemName);
+
     return 0;
 
 }
